@@ -1,0 +1,136 @@
+<%- include('../admin/layout/header.ejs') %>
+
+
+
+
+<ul class="breadcrumb">
+    <li><a href="#">admin</a></li>
+    <li><a href="#">banner</a></li>
+
+  </ul>
+  <style>
+    /* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+  </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+<script>
+	$(document).ready(function() {
+  $('#myTable').DataTable({
+    "order": []
+  });
+});
+</script>
+        <!-- Sidebar End -->
+       
+
+        <style>
+            #banner{
+                color: var(--primary);
+                background: #FFFFFF;
+                border-color: var(--primary);
+            }
+        </style>
+
+
+		<div class="align-items-center ms-5"width="1500px">
+            <main class="ms-5"width="1500px">
+                <div class="head-title">
+                    <div class="left">
+                        <h1 style="text-align: center;">Banner</h1>
+                     
+                    </div>
+                    <a href="bannerAdd"  style="display: flex;justify-content: center;" >
+                
+                        <button type="button" class="btn btn-primary">ADD NEW BANNER</button>
+                    </a>
+                </div>
+    
+    
+                <div class="table-data"width="1500px">
+                    <div class="order">
+                   
+                    
+           
+                        <table id="myTable" >
+                            <thead >
+                                <tr >
+                                    <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;">banner name</th>
+                                    <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;">description</th>
+                                    <th style="border-bottom: solid 1px black; width: 150px; height: 50px; text-align: center; overflow-x: auto;">bannerurl</th>                                    <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;">Banner image</th>
+                                    <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;">Delete</th></a>
+                            </tr>
+                            </thead>
+                            <tbody>
+                  <% if(bannerData.length >0){
+                    for(let i=0;i<bannerData.length;i++){
+                      %>
+                      <tr style="margin: 20px;">
+                            <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;"><%=bannerData[i].bannerName %></td>   
+                            <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;"><%=bannerData[i].description %></td>
+
+                            <th style="border-bottom: solid 1px black; width: 150px; height: 50px; text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                              <%=bannerData[i].bannerUrl%>
+                            </th> 
+                             <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;"><img width="100px"height="100px" src="/prodectImages/<%=bannerData[i].image%>" alt="<%=bannerData[i].image %>"> </td>    
+                             <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;"> <a href="/admin/deleteBanner?id=<%=bannerData[i]._id %>"><button style="border: none;background-color: red;color: white;">Delete</button></a> </td>
+                                    
+                                </tr>
+                 <%
+                    }
+                  } %>
+                            
+                                
+                            </tbody>
+                        </table>
+    
+                    
+                
+            
+            </main>
+        </div>
+    
+    
+   
+
+    <!-- JavaScript Libraries -->
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!-- 
+
+
+
+<!doctype html>
+<html lang="zxx">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>IsFewStore</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/all.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <body style="background-color: rgb(180, 95, 95);text-align: center;">
+
+       
+    <!--================login_part Area =================-->
+    <!-- <section class="login_part padding_top "> -->
+        <!-- <div class="container bg-success "> -->
+            <h1>aranaz</h1>
+            <div>
+                <%
+                if (typeof message!='undefined')
+                {
+                    %>
+                    <h4 style="text-align: center;color: rgb(254, 37, 37);background-color: rgb(255, 255, 255);font-weight: lighter;"><%= message %></p>
+                    <%
+
+                }
+                  %> 
+                </div>
+
+            <div class="mask d-flex bg-Danger align-items-center h-90 gradient-custom-3">
+                <div class="container h-100">
+                  <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                      <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                          <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+              
+                          <form  method="post">
+              
+                            <div class="form-outline mb-4">
+                              <input type="text" name="name" Required id="form3Example1cg" class="form-control form-control-lg" />
+                              <label class="form-label" for="form3Example1cg">Your Name</label>
+                            </div>
+              
+                            <div class="form-outline mb-4">
+                              <input type="email"name="email"  Required id="form3Example3cg" class="form-control form-control-lg" />
+                              <label class="form-label" for="form3Example3cg">Your Email</label>
+                            </div>
+              
+                            <div class="form-outline mb-4">
+                              <input type="password" name="password" Required id="password" class="form-control form-control-lg" />
+                              <label class="form-label" for="form3Example4cg">Password</label>
+                            </div>
+              
+                            <div class="form-outline mb-4">
+                              <input type="password" name="confirmpassword" Required id="confirmpassword" class="form-control form-control-lg" />
+                              <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                            </div>
+                            <div class="form-outline mb-4">
+                              <input type="phone" name="phone" Required id="confirmpassword" class="form-control form-control-lg" />
+                              <label class="form-label" for="form3Example4cdg">Enter your mobile</label>
+                            </div>
+              
+                            <div class="form-check d-flex justify-content-center mb-5">
+                              <!-- <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" /> -->
+                              
+                                I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                              </label>
+                            </div>
+                            <script>
+                                document.getElementById("confirmpassword").addEventListener("input", function() {
+                                var password = document.getElementById("password").value;
+                                 var confirmpassword = document.getElementById("confirmpassword").value;
+                                 if (password !== confirmpassword) {
+                                 document.getElementById("confirmpassword").setCustomValidity("Passwords do not match.");
+                                 } else {
+                             document.getElementById("confirmpassword").setCustomValidity("");
+                                      }});
+              
+                              </script>
+              
+                            <div class="d-flex justify-content-center">
+                            <input type="submit"value="register"style="width:350px;height:70px;background-color: rgb(254, 37, 37);color:white;border-radius:10px;border:none">
+                            </div>
+              
+                            <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/login"
+                                class="fw-bold text-body"><u>Login here</u></a></p>
+              
+                          </form>
+              
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </section>
+    <!--================login_part end =================-->
+
+
+    </footer>
+    <!--::footer_part end::-->
+
+    <!-- jquery plugins here-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- jquery -->
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <!-- slick js -->
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/stellar.js"></script>
+    <script src="js/price_rangs.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html> -->

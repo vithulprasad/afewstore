@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="zxx">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>IsFewStore</title>
+  <link rel="icon" href="img/favicon.png">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- animate CSS -->
+  <link rel="stylesheet" href="css/animate.css">
+  <!-- owl carousel CSS -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <!-- nice select CSS -->
+  <link rel="stylesheet" href="css/nice-select.css">
+  <!-- font awesome CSS -->
+  <link rel="stylesheet" href="css/all.css">
+  <!-- flaticon CSS -->
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/themify-icons.css">
+  <!-- font awesome CSS -->
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <!-- swiper CSS -->
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/price_rangs.css">
+  <!-- style CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  
+  <header class="main_menu home_menu">
+    <div class="container-fluid" style="border-bottom: solid 2px; background-color: #ff3368;">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="menu_icon"><i class="fas fa-bars"></i></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
+                      <ul class="navbar-nav">
+                          <li class="nav-item">
+                              <a class="nav-link" href="home">Home</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
+                                  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Shop
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                  <a class="dropdown-item" href="category"> shop category</a>
+                                
+                                  
+                              </div>
+                          </li>
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3"
+                                  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  pages
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
+                                 
+                               
+                                  <a class="dropdown-item" href="cartPage">shopping cart</a>
+                                  <a class="dropdown-item" href="confirmation">confirmation</a>
+                                  
+                              </div>
+                          </li>
+                      
+                          
+                         
+                        
+            
+                        
+                      </ul>
+                  </div>
+                    <div class="hearer_icon d-flex">
+                        <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
+                        <a href=""><i class="ti-heart"></i></a>
+                        <div class="dropdown cart">
+                            <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-cart-plus"></i>
+                            </a>
+                        
+                            
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div width="100%"height="200px"style="
+    height: 100px;
+    display: flex;
+    justify-content: space-around;">
+  
+      <form class="form-inline">
+       <button style="margin-right: 100px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">ADD NEW ADDRESS</button>
+
+      
+        
+      </form>
+  
+  </div>
+</header>
+
+
+
+<!-- booot strap form -->
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <% if (j==-1) { %>
+          <form action="/addressAdd?"method="post">
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">FIRST NAME</label>
+              <input name="firstName" type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">LAST NAME</label>
+              <input name="lastName" type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">HOUSE</label>
+              <input name="house" type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">POST</label>
+              <input name="post" type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">CITY</label>
+              <input name="city" type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">DISTRICT</label>
+              <input name="district" type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">STATE</label>
+              <input name="state" type="text" class="form-control" id="recipient-name">
+            </div>
+  
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">STATE</label>
+              <input name="pin" type="number" class="form-control" id="recipient-name">
+            </div>
+     
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">ADD NEW ADDRESS</button>
+        </form>
+        <% }else{ %>
+        <form action="/addressAdd?id=<%=CartData.products[j].productId%>"method="post">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">FIRST NAME</label>
+            <input name="firstName" type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">LAST NAME</label>
+            <input name="lastName" type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">HOUSE</label>
+            <input name="house" type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">POST</label>
+            <input name="post" type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">CITY</label>
+            <input name="city" type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">DISTRICT</label>
+            <input name="district" type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">STATE</label>
+            <input name="state" type="text" class="form-control" id="recipient-name">
+          </div>
+
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">STATE</label>
+            <input name="pin" type="number" class="form-control" id="recipient-name">
+          </div>
+   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">ADD NEW ADDRESS</button>
+      </form>
+      <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end -->
+  <!--================Checkout Area =================-->
+  <section class="checkout_area padding_top"style="2200px">
+    <div class="container">
+     
+      <div class="billing_details"style="margin-top:55px">
+        <div class="row">
+          <div class="col-lg-8">
+      <!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+     
+      <div style="width: 500px;height: 700px; background-color: #fa8ba8;margin-left: -378px;overflow: scroll;">
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+       <% for( let k = 0; k < CartData.address.length; k++ ) { %>
+        <li>
+          <div class="list-group">
+            <div class="list-group-item" style="width: 450px;margin-left: 20px;">
+              <div class="list-group-item-heading">          
+                  <div class="row radio">
+                    <div class="col-xs-3" style="margin-right: 20px;">
+                      <label>
+                        <% if (j==-1) { %>
+                          <input type="radio" name="optionShipp" id="<%=CartData.address[k]._id%>" onclick="setAll('<%=CartData.address[k]._id%>')" value="option2">
+
+                        <% }else{ %>
+                        <input type="radio" name="optionShipp" id="<%=CartData.address[k]._id%>" onclick="set('<%=CartData.address[k]._id%>','<%=CartData.products[j].productId%>')" value="option2">
+                        address :  <%= k+1 %> 
+                        <% } %>
+                      </label>
+                     
+                    </div>
+                    <div class="col-xs-5"style="margin-left:0px">
+                      <div style="height: 100px;overflow: scroll;width: 400px;">
+                      <dl class="dl-small">
+                        <dt>address </dt>
+                        <dd> <strong>house:</strong>  <%=CartData.address[k].house%></dd>
+                        <dd> <strong>post:</strong> <%=CartData.address[k].post%> </dd>
+                        <dd><strong>city:</strong><%=CartData.address[k].city%> </dd>
+                        <dd><strong>district:</strong><%=CartData.address[k].district%> </dd>
+                        <dd><strong>state:</strong><%=CartData.address[k].state%> </dd>
+                        <dd><strong>pin:</strong><%=CartData.address[k].pin%> </dd>
+    
+                      </dl>
+                      <button onclick="model('<%=CartData.address[k].house%>','<%=CartData.address[k].post%> ','<%=CartData.address[k].city%> ','<%=CartData.address[k].district%> ','<%=CartData.address[k].state%> ','<%=CartData.address[k].pin%> ','<%=CartData.address[k]._id%> ')" data-toggle="modal" data-target="#myModal" class="btn btn-sm" ">Edit</button>                      
+
+
+                      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                        
+                              <h5 class="modal-title" id="myModalLabel">edit address</h5>
+                           
+                              <input name="house" type="text" class="form-control" id="house" value="">
+                              <input name="post" type="text" class="form-control" id="post" value="">
+                              <input name="city" type="text" class="form-control" id="city" value="">
+                              <input name="district" type="text" class="form-control" id="district" value="">
+                              <input name="state" type="text" class="form-control" id="state" value="">
+                              <input name="pin" type="text" class="form-control" id="pinone" value="">
+                              <input hidden name="pin" type="text" class="form-control" id="id" value="">
+
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button onclick="edit('house','post','city','district','state','pinone','id')"  class="btn btn-primary">EDIT ADDRESS</button>
+                              </div>
+                           
+                          </div>
+                        </div>
+                      </div>
+                      <script>
+   const model = function(one,two,three,four,five,six,seven) {         
+                                const input = document.getElementById("house");
+                                const input1 = document.getElementById("post");
+                                const input2 = document.getElementById("city");
+                                const input3 = document.getElementById("district");
+                                const input4= document.getElementById("state");
+                                const input5 = document.getElementById("pinone");
+                                const input6 = document.getElementById("id");
+                              
+                                input.value =one
+                                input1.value =two
+                                input2.value =three
+                                input3.value =four
+                                input4.value =five
+                                input5.value =six
+                                input6.value =seven
+                            };
+                            const edit = function(one,two,three,four,five,six,seven) {         
+                                const input = document.getElementById(one);
+                                const input1 = document.getElementById(two);
+                                const input2 = document.getElementById(three);
+                                const input3 = document.getElementById(four);
+                                const input4= document.getElementById(five);
+                                const input5 = document.getElementById(six);
+                                const input6 = document.getElementById(seven);
+                                
+                                   
+                                $.ajax({
+                                    url: '/editAddress',
+                                    method: 'PATCH',
+                                    dataType: 'json',
+                                    data: {
+                                        value1:input.value,
+                                        value2:input1.value,
+                                        value3:input2.value,
+                                        value4:input3.value,
+                                        value5:input4.value,
+                                        value6:input5.value,
+                                        value7:input6.value,
+
+                                    }
+                                }).done(data => {                               
+                                      if(data.success==true){
+                                        Swal.fire(
+                                          'added !',
+                                          'Your address is updated!',
+                                          'success'
+                                        )
+                                      } 
+                                });
+                            };
+                        
+                         
+                       
+                      </script>
+
+                      <% if (k==0) { %>
+                       
+                      <% }else{ %>
+                        <button onclick="deleteAdd('<%=CartData.address[k]._id%>')" class="btn btn-sm btn-link">Delete this address</button>
+
+                        <% } %>
+                      
+                    </div>
+                  </div>
+                  </div>
+              </div>
+            </div>
+            <script>
+               const setAll = function(id) {
+                                $.ajax({
+                                    url: '/set',
+                                    method: 'PATCH',
+                                    dataType: 'json',
+                                    data: {
+                                        id: id
+                                    }
+                                }).done(data => {                               
+                                    $("#first1").val(data.house);
+                                    $("#first2").val(data.post);
+                                    $("#first3").val(data.city);
+                                    $("#first4").val(data.district);
+                                    $("#first5").val(data.state);
+                                    $("#first6").val(data.pin);
+                                });
+                            };
+                          const set = function(id,pId) {
+                                $.ajax({
+                                    url: '/set',
+                                    method: 'PATCH',
+                                    dataType: 'json',
+                                    data: {
+                                        id: id,
+                                        pId: pId
+                                    }
+                                }).done(data => {                               
+                                    $("#first1").val(data.house);
+                                    $("#first2").val(data.post);
+                                    $("#first3").val(data.city);
+                                    $("#first4").val(data.district);
+                                    $("#first5").val(data.state);
+                                    $("#first6").val(data.pin);
+                                });
+                            };
+                            
+                            const deleteAdd = function(id) {
+                                $.ajax({
+                                    url: '/deleteAddress',
+                                    method: 'PATCH',
+                                    dataType: 'json',
+                                    data: {
+                                        id: id
+                                    }
+                                }).done(data => {                               
+                                  if(data.success==true){
+                                        Swal.fire(
+                                          'added !',
+                                          'Your address is deleted!',
+                                          'success'
+                                        )
+                                      } 
+                                });
+                            };
+            </script>
+        <% } %>
+            
+        </li>
+        
+
+      
+  
+    </div>
+    
+
+<!-- ---------------------------------------------------------------------------------- -->
+
+            <form height="600px"overflow="scroll" class="row contact_form" action="#" method="post" novalidate="novalidate" style="margin-left:160px;margin-top: -700px;border: solid 1px pink;margin-right: -200px;    width: 527px ;   margin-left: 250px;
+            height: 695px;">
+          
+              <div class="col-md-12 form-group">
+                <span class="placeholder" >Post</span>
+                <input type="text" class="form-control" id="company" name="aranaz" value="<%=CartData.address[0].post%>" placeholder="company aranaz" />
+              </div>
+              <div class="col-md-6 form-group ">
+                <span class="placeholder" >phone</span>
+                <input type="text" class="form-control" id="number" name="<%=userData.phone%>" value="<%=userData.phone%>"/>
+               
+              </div>
+              <div class="col-md-6 form-group ">
+                <span class="placeholder" >E-mail</span>
+                <input type="text" class="form-control" id="email" name="<%=userData.email%>" value="<%=userData.email%>" />
+                
+              </div>
+
+              <div class="col-md-12 form-group">
+                <span class="placeholder" >House</span>
+                <input type="text" class="form-control" id="first1" name="aranaz" value="<%=CartData.address[0].house%>"  />
+              </div>
+              
+              
+              <div class="col-md-12 form-group">
+                <span class="placeholder" >Post</span>
+                <input type="text" class="form-control" id="first2" name="aranaz" value="<%=CartData.address[0].post%>"  />
+              </div>
+              
+              <div class="col-md-12 form-group">
+                <span class="placeholder" >city</span>
+                <input type="text" class="form-control" id="first3" name="aranaz" value="<%-CartData.address[0].city%>" />
+              </div> 
+              
+              <div class="col-md-12 form-group">
+                <span class="placeholder" >District</span>
+                <input type="text" class="form-control" id="first4" name="aranaz" value="<%=CartData.address[0].district%>" />
+              </div>
+              
+              <div class="col-md-12 form-group">
+                <span class="placeholder" >State</span>
+                <input type="text" class="form-control" id="first5" name="aranaz" value="<%=CartData.address[0].state%>" />
+              </div>
+              
+              <div class="col-md-12 form-group">
+                <span class="placeholder" >pin Code</span>
+                <input type="text" class="form-control" id="first6" name="aranaz" value="<%=CartData.address[0].pin%>"  />
+              </div>
+         
+            </form>
+          </div>
+
+    <% if (j==-1) { %>
+        
+      <div class="col-lg-4" style="width: 500px;">
+        <div class="order_box"style="width: 500px;margin:left 150px;margin-left: 150px;">
+          <h2>Your Order</h2>
+          <ul class="list">
+            <li>
+              <a href="#"style="display:flex;justify-content:space-around">
+                <span>product name</span>
+                <span>product Quantity</span>
+                <span>product price</span>
+                <span>Total</span>
+
+              </a>
+            </li>
+         
+            <% for( let k = 0; k < CartData.products.length; k++ ) { %>
+            <li>
+              <a href="#"style="display:flex;justify-content:space-around">
+             
+                  <span style="width:100px"><%=CartData.products[k].name%></span>
+                  <span >x <%-CartData.products[k].quantity%></span>
+                  <span >$<%=CartData.products[k].price%></span>
+                  <span>$ <%=CartData.products[k].quantity*CartData.products[k].price%> </span>
+          
+            
+               
+               
+              </a>
+            </li>
+            <% } %>
+           
+            <li>
+              <a href="#">Shipping
+                <span>Flat rate: $50.00</span>
+              </a>
+            </li>
+            <li>
+              <div style="display: flex;justify-content: space-around;"><h6 style="color: rgb(160, 160, 160);">coupon:$ <h5><%=CartData.coupon%></h5></h6></div>
+               
+              <a href="#"><h5 style="float: left;color: rgb(160, 160, 160);">  total product price:</h5><h3 style="float: right;"><%=CartData.totalPrice-CartData.coupon%></h3>
+               
+              
+              </a>
+            </li>
+            <li>
+
+
+<!-- =============================================MAIN================================================ -->
+
+              <div style="margin-top: 30px;width: 200px;height: 30px;">
+                <li style="display: flex;justify-content: space-around;">
+                  <input type="radio"name="optionShipp"id="cachOnDelivery"onclick="change(id)"  checked>
+                  <h5 style="color:rgb(160, 160, 160) ;">cash on delivery</h5>
+                 </li>
+                 <li  style="display: flex;justify-content: space-around; margin-right:-50px;">
+                   <input name="optionShipp" type="radio"style="margin-left:-159px;background-color:red"id="rozopay"onclick="change(id)">
+                   <h5 style="margin-left: -300px;color: rgb(160, 160, 160);">rozopay</h5>
+                 </li>
+                 <% if (userData.wallet>CartData.totalPrice) { %>
+                  <li  style="display: flex;justify-content: space-around; margin-right:-50px;">
+                    <input name="optionShipp" type="radio"style="margin-left:-165px;background-color:red"id="Wallet"onclick="change(id)">
+                    <h5 style="margin-left: -300px;color: rgb(160, 160, 160);">Wallet</h5>
+                  </li>
+                 <% } %>
+              
+               
+              </div>
+
+
+<!-- =================================================script=============================================== -->
+    <script>
+              const change = function (id) {
+
+                        $.ajax({
+                                    url: '/change',
+                                    method: 'PATCH',
+                                    dataType: 'json',
+                                    data: {
+                                        id: id
+                                    }
+                                }).done(data => {                               
+                                 const datas = data.cash
+                                 $("#heading-button").html(data.cash);
+                                });
+                          
+      }
+    </script>
+
+
+<!-- =================================================-====== THIS IS PRODUCT ALL BUY=============================================== -->
+
+            </li>
+     
+          </ul>
+            
+          <a data-toggle="modal" data-target="#exampleModal2" style="margin-top: 100px;margin-left: 120px;width: 300px;text-align: center;" class="btn_3"> <h5  id="heading-button"> Cash On Delivery</h5></a>
+        </div>
+        <!-- Button trigger modal -->
+
+<!-- Modal -->
+
+
+<!-- Second modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel2">Second Modal Title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>This is the content of the second modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button onclick="purchase1()" type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+        <script>
+
+const purchase1 = function () { 
+                       $.ajax({
+                          url: '/purchase',
+                          method: 'PATCH',
+                          dataType: 'json',
+                          success: 
+                         
+                          
+                          function(response) {
+                            if (response.success==false) {
+                              console.log('yes if is working');
+                              location.href='successPage'
+                            }else{
+                              orders(response)
+
+                            }
+                              }
+
+
+                      }).done(data => {                               
+                       console.log('hai this is data of purchase',data);
+                      
+                   
+                      });
+                
+                    }
+
+                      const orders = function (order) {
+                        console.log(order.id)
+                     
+                                 
+                        var options = {
+                                      "key": "rzp_test_WTHfJRiFr1eRcD", 
+                                      "amount": order.amount_due*100, 
+                                      "currency": "INR",
+                                      "name": "MEN SPACE", 
+                                      "description": "Test Transaction",
+                                      "image": "https://example.com/your_logo",
+                                      "order_id": ""+order.id, 
+                                      "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+                                     
+                                      "prefill": {
+                                          "name": "Gaurav Kumar",
+                                          "email": "gaurav.kumar@example.com",
+                                          "contact": "9000090000"
+                                      },
+                                      "notes": {
+                                          "address": "Razorpay Corporate Office"
+                                      },
+                                      "theme": {
+                                          "color": "#3399cc"
+                                      },
+                                      "handler":function (response){
+                                      
+                                        Swal.fire(
+                                          'success',
+                                          'Your order placed successfully!',
+                                          'success'
+                                        )
+                                        setTimeout(() => {
+                                          verifyPayment(response,order)
+                                        }, 2000);
+                                         
+                                      
+                                      }
+                                    ,
+                                  }
+                                  console.log(order.id)
+                                  var rzp1 = new Razorpay(options);
+                                  console.log(rzp1);
+                                  rzp1.open();
+
+                            }
+
+
+
+
+                                    function verifyPayment(response,order){
+                                      console.log("verfy payment");
+                                        $.ajax({
+                                          url:'/verify-payment',
+                                          data:{response,order},
+                                          method:'patch',
+                                          success:(response)=>{
+                                            if(response.success==true){
+                                                console.log('going to successpage---------');
+                                                location.href='successPage'
+                                            }else if(response.paymentFailed){
+                                                alert('payment failed')
+                                            }
+                                          }
+                                          
+
+                                        })
+                                    }
+        </script>
+      </div>
+   
+    <% }else{ %>
+
+          <div class="col-lg-4">
+            <div class="order_box">
+              <h2>Your Order</h2>
+              <ul class="list">
+                <li>
+                  <a href="#"style="display:flex;justify-content:space-around">
+                    <span>productName</span>
+                    <span> Quantity</span>
+                    <span> price</span>
+                    <span>Total</span>
+    
+                  </a>
+                </li>
+                <li>
+                  <a href="#"style="display:flex;justify-content:space-around">
+                    <span >x <%-CartData.products[j].name%></span>
+                    <span >$<%=CartData.products[j].quantity%></span>
+                    <span>$<%=CartData.products[j].price%></span>
+                    <span >$<%=CartData.products[j].price*CartData.products[j].quantity%></span>
+                  </a>
+                </li>
+               
+                <li>
+                  <a href="#">Shipping
+                    <span>Flat rate: $50.00</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <h3 style="float: right;">$ <%=CartData.products[j].quantity*CartData.products[j].price%></h3>
+                  </a>
+                </li>
+              </ul>
+                <!-- ============================================== CART PRODUCT SINGLE BUY+===================================-->
+
+
+
+              <a style="margin-top: 100px;" onclick="purchase('<%=CartData.products[j].productId%>')" class="btn_3" >Cash On Delivery</a>
+            </div>
+          </div>
+
+
+          <script>
+            const purchase = function (id) {
+      
+                      $.ajax({
+                                          url: '/purchase',
+                                          method: 'PATCH',
+                                          dataType: 'json',
+                                          data: {
+                                              id: id
+                                          }
+                                      }).done(data => {                               
+                                       const datas = data.cash
+                                       
+                                      });
+                                
+            }
+ 
+          </script>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!--================End Checkout Area =================-->
+
+  <!-- Button trigger modal -->
+ 
+
+  <!-- jquery plugins here-->
+  <!-- jquery -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="js/jquery-1.12.1.min.js"></script>
+  <!-- popper js -->
+  <script src="js/popper.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- easing js -->
+  <script src="js/jquery.magnific-popup.js"></script>
+  <!-- swiper js -->
+  <script src="js/swiper.min.js"></script>
+  <!-- swiper js -->
+  <script src="js/masonry.pkgd.js"></script>
+  <!-- particles js -->
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.nice-select.min.js"></script>
+  <!-- slick js -->
+  <script src="js/slick.min.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/waypoints.min.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="js/jquery.form.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/mail-script.js"></script>
+  <script src="js/stellar.js"></script>
+  <script src="js/price_rangs.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+</body>
+
+</html>

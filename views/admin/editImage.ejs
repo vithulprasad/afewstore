@@ -1,0 +1,74 @@
+<div class="align-items-center ms-5">
+  <main class="ms-5">
+    <div class="head-title">
+      <div class="left">
+        <h1>Product</h1>
+        
+      </div>
+      <a href="productAdd" class="btn-download" style="margin-left: 800px;">
+                  <button style="width: 200px;" type="button" class="btn btn-success"> ADD NEW PRODUCT</button>
+      </a>
+    </div>
+
+
+          <div class="table-data">
+      <div class="order">
+        <div class="head">
+          <h3>Products</h3>
+          <a href=""><i width="40"height="40"class='bx bx-search' ></i></a>
+          <i class='bx bx-filter' ></i>
+        </div>
+      
+        <div id="notification"></div>
+      
+        <table id="myTable" >
+          <thead >
+            <tr >
+                          <td style="border: solid 2px rgb(10, 10, 11); width: 150px;height: 50px ;text-align: center;"> <p> sl no</p> </td>
+                                     <th style="border: solid 2px rgb(4, 4, 5); width: 150px;height: 50px ;text-align: center;">Name</th>
+                                     <th style="border: solid 2px rgb(7, 7, 8); width: 150px;height: 50px ;text-align: center;">image</th>
+                                     <th style="border: solid 2px rgb(8, 8, 9); width: 150px;height: 50px ;text-align: center;">Category</th>
+                          <a href=""><th  style="border: solid 2px rgb(13, 13, 14); width: 150px;height: 50px ;text-align: center;">Update</th></a>
+                          <a href=""><th  style="border: solid 2px rgb(7, 6, 8); width: 150px;height: 50px ;text-align: center;">Delete</th></a>
+                          <a href=""><th  style="border: solid 2px rgb(7, 6, 8); width: 150px;height: 50px ;text-align: center;">View</th></a>
+                      </tr>
+          </thead>
+          <tbody>
+            <% if(productData.length >0){
+              for(let i=0;i<productData.length;i++){
+                %>
+                   <tr style="margin: 20px;">
+                  <td style="border: solid 2px rgb(10, 10, 11); width: 150px;height: 50px ;text-align: center;"> <p> <%=i+1%></p> </td>
+                  <td  style="border: solid 2px rgb(7, 7, 9); width: 150px;height: 50px ;text-align: center;">
+                  <p><%= productData[i].name %> </p>
+                 </td>
+                 <td  style="border: solid 2px rgb(7, 6, 7); width: 150px;height: 50px ;text-align: center;"" >
+                   <img width="100px"height="70px" src=" prodectImages/<%=productData[i].image[0] %> " alt="<%= productData[i].image[0] %> ">
+                 </td>
+                <td style="border: solid 2px rgb(10, 10, 11); width: 150px;height: 50px ;text-align: center;"> <p> <%= productData[i].category.name %></p> </td>
+                <td  style="border: solid 2px rgb(9, 9, 10); width: 150px;height: 50px ;text-align: center;"> <a href="/admin/updateProduct?id=<%=productData[i]._id %>"><button style="width: 100px;" type="button" class="btn btn-primary">Update</button></a> </td>
+                <td  style="border: solid 2px rgb(3, 3, 3); width: 150px;height: 50px ;text-align: center;"> <a href="/admin/deleteProduct?id=<%=productData[i]._id %>"><button style="width: 100px;" type="button" class="btn btn-danger">Delete</button></a> </td>
+                <td  style="border: solid 2px rgb(3, 3, 3); width: 150px;height: 50px ;text-align: center;"> <a href="/admin/productView?id=<%=productData[i]._id %>"><button style="width: 100px;" type="button" class="btn btn-info"> View</button></a> </td>
+            </tr>
+            <%
+              }
+            } %>
+          
+            
+          </tbody>
+        </table>
+    
+
+
+      
+    
+  
+  </main>
+</div>
+
+
+
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+  </div>

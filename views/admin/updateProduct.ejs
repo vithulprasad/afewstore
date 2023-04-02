@@ -1,0 +1,253 @@
+<%- include('../admin/layout/header.ejs') %>
+
+<ul class="breadcrumb">
+  <li><a href="#">admin</a></li>
+  <li><a href="#">product</a></li>
+  <li><a href="#">update product</a></li>
+</ul>
+<style>
+  /* Style the list */
+ul.breadcrumb {
+padding: 10px 16px;
+list-style: none;
+background-color: #eee;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+display: inline;
+font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+padding: 8px;
+color: black;
+content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+color: #0275d8;
+text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+color: #01447e;
+text-decoration: underline;
+}
+</style>
+<%
+if ( message!='true')
+{
+    %>
+    <h4 style="text-align: center;color: rgb(217, 40, 0);"><%= message %></h4>
+    <%
+
+}
+  %>
+
+<!-- grid -->
+<div class="container">
+  <div class="row row-cols-2">
+    <div class="col">   <h2 class="text-center">UPDATE Product</h2>
+      <form action="/admin/updateProduct" method="post" enctype="multipart/form-data">
+          <!-- enctype="multipart/form-data"  -->
+          
+          <label for="" class="mt-3">Name</label>            
+          <input type="text"name="name"class="form-control" value="<%=productData.name %>">  
+
+          <label for="" class="mt-4">Discription</label>        
+          <input type="text"name="discription"class="form-control" value="<%=productData.discription %>">
+          
+
+          <label for="" class="mt-4">Price</label>         
+          <input type="number"name="price"class="form-control" value="<%= productData.price %>">
+
+          <label for="" class="mt-4">offerPrice</label>
+          <input  required type="number"name="offerPrice"class="form-control" value="<%= productData.offerPrice %>">
+
+          <label for="" class="mt-4">Quantity</label>         
+          <input type="text"name="que"class="form-control" value="<%= productData.quantity %>">
+
+          <label for="" class="mt-4">select category</label>
+          <select style="margin-bottom: 50px;" name="category" id=""  class="form-control">
+            <option value="<%=productData.category._id%>"><%=productData.category.name %></option>
+            <% for(let res of category){ %>
+              <option value="<%= res._id %>"><%= res.name %></option>
+            <% } %>
+          </select>
+          <button  type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+            SUBMIT UPDATION FORM
+           </button>
+        </div>
+         
+  
+
+
+
+
+    <div class="col">        
+      <input input type="hidden" name="edit" id="input_hidden_field">
+      <% productData.image.forEach((element,i) => { %>
+      
+
+        <div width="1000px"height="500px" style="border: solid 1px red;margin: 10px;padding: 10px;">
+      <img width="100px"height="70px" src=" prodectImages/<%=element %> " alt="<%=productData.image[0] %> ">
+      <label for="" class="mt-4"> edit image <h2> <%= i %></h2></label>
+      <div style="width: 500px;display: flex;justify-content: space-around;">
+      <input type="file" onchange="hi('<%= i %>')" name="image" value="hallo"  class="form-control"> 
+      <input type="hidden" name="position_<%= i %>" value="<%= i %>">
+
+    </div>
+  </div>
+
+      <% }) %>
+      <a href="/admin/deleteProductImage?id=<%= productData._id %>"><button style="width: 100px; float: right;" type="button" class="btn btn-danger"> Delete</button></a> 
+
+    
+      <script>
+        var elms = [];
+      function hi(i){
+      
+        elms.push(i);
+ 
+ 
+ $('#input_hidden_field').val(JSON.stringify(elms));
+       }
+     </script>
+
+    <!-- close it -->
+    <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+      ADD NEW IMAGE
+    </button>
+   <input type="hidden" name="id" value="<%= productData._id %>"></div>
+    
+
+
+    <!-- bootstrapp pop up -->
+ 
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        are you sure you want to update this product ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" id="liveToastBtn">are u sure</button>
+
+         <!-- ---------------------------------------------------------------------------------------- -->
+
+         
+
+         <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+           <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+             <div class="toast-header">
+               <img src="..." class="rounded me-2" alt="...">
+               <strong class="me-auto">Bootstrap</strong>
+               <small>11 mins ago</small>
+               <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+             </div>
+             <div class="toast-body">
+               Hello, world! This is a toast message.
+             </div>
+           </div>
+         </div>
+
+         <!-- ---------------------------------------------------------------------------------------- -->
+      </div>
+    </div>
+  
+</div>
+
+<script>
+  const displayNotification = function(message) {
+  const notificationDiv = document.getElementById('notification');
+  notificationDiv.innerHTML = message;
+  notificationDiv.style.display = 'block';
+};
+displayNotification('Hello, world!');
+</script>
+
+<div id="notification"></div>
+
+    <!-- end pop -->
+  </form>
+</div>
+<!-- Button trigger modal -->
+
+</div>
+  </a>         
+
+  </div>
+</div>
+
+
+
+<!-- gri end -->
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/admin/updateProductImage" method="post" enctype="multipart/form-data">
+
+        <input type="hidden" name="id" value="<%= productData._id %>"></div>
+        <input type="file" name="image" class="form-control"  >
+        <button style="margin-top: 10px;" type="submit" class="btn btn-primary">SAVE THE IMAGE</button>
+
+      </div>
+   
+    </form>
+    </div>
+  </div>
+
+
+
+
+
+
+      
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

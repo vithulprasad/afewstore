@@ -1,0 +1,101 @@
+<%- include('../admin/layout/header.ejs') %>
+<style>
+	#coupon{
+		color: var(--primary);
+		background: #FFFFFF;
+		border-color: var(--primary);
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+<script>
+	$(document).ready(function() {
+  $('#myTable').DataTable({
+    "order": []
+  });
+});
+</script>
+
+
+
+		<div class="align-items-center ms-5">
+            <main class="ms-5">
+                <div class="head-title">
+                    <div class="left">
+                        <h1 style="text-align: center;">COUPON PAGE</h1>
+                        <ul class="breadcrumb">
+                            <li>
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li><i class='bx bx-chevron-right' ></i></li>
+                            <li>
+                                <a class="active" href="#">COUPON PAGE</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="couponAdd"  style="display: flex;justify-content: center;" >
+                
+                        <button type="button" class="btn btn-primary">ADD NEW COUPON</button>
+                    </a>
+                </div>
+    
+    
+                <div class="table-data">
+                    <div class="order">
+                      
+                    
+           
+                        <table id="myTable" >
+                            <thead >
+                                <tr >
+                                    <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;">name</th>
+                                    <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;">number</th>
+                                    <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;">price</th>
+                                    <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;">start date</th>
+                                    <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;">end date</th>
+                                     
+                                <a href=""> <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;">Delete</th></a>
+                            </tr>
+                            </thead>
+                            <tbody>
+                  <% if(couponData.length >0){
+                    for(let i=0;i<couponData.length;i++){
+                      %>
+                      <tr style="margin: 20px;">
+                                
+                        <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;"> <p> <%=couponData[i].couponName %></p> </td>   
+                        <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;"> <p> <%=couponData[i].code%></p> </td> 
+                        <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;"> <p> <%= couponData[i].price %></p> </td> 
+                        <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;"> <p> <%= couponData[i].ExpDate.toLocaleDateString() %></p> </td>  
+                        <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;"> <p> <%= couponData[i].finalDate.toLocaleDateString() %></p> </td>    
+                                        <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;"> <a href="/admin/couponDelete?id=<%=couponData[i]._id %>"><button style="border: none;background-color: red;color: white;">Delete</button></a> </td>   
+                                </tr>
+                                <%
+                    }
+                  } %>
+                            
+                                
+                            </tbody>
+                        </table>
+    
+                    
+                
+            
+            </main>
+        </div>
+    
+    
+   
+
+    <!-- JavaScript Libraries -->
+  
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<%- include('../admin/layout/header.ejs') %>
+<ul class="breadcrumb">
+    <li><a href="#">admin</a></li>
+    <li><a href="#">product</a></li>
+
+  </ul>
+  <style>
+    /* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+  </style>
+<body style="width: 100px;">
+	
+
+
+
+<a id="product" href="product" class="nav-item nav-link"><i class="fa fa-th me-2"></i>product</a>
+
+<style>
+	#product{
+		color: var(--primary);
+		background: #FFFFFF;
+		border-color: var(--primary);
+	}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+<script>
+	$(document).ready(function() {
+  $('#myTable').DataTable({
+    "order": []
+  });
+});
+</script>
+
+<h2> PRODUCT PAGE</h2>
+<a href="productAdd" style="display: flex;justify-content: center;" ><button type="button" class="btn btn-success">ADD NEW PRODUCT</button></a>
+
+<table id="myTable" style="width: 1500px;">
+	<thead>
+	  <tr>
+		<th>Sl-no</th>
+		<th>Name</th>
+		<th>Image</th>
+		<th>Category</th>
+		<th>quantity</th>
+		<th>Update</th>
+		<th>Delete</th>
+		<th>View</th>
+	
+		
+	  </tr>
+	</thead>
+	<tbody>
+		<% if(productData.length >0){
+			for(let i=0;i<productData.length;i++){
+			  %>
+	  <tr>
+		<td style="border-bottom: solid 1px blue;"><p> <%=i+1%></p></td>
+		<td style="border-bottom: solid 1px blue;"> <p><%= productData[i].name %> </p></td>
+		<td style="border-bottom: solid 1px blue;">  <img width="100px"height="70px" src=" prodectImages/<%=productData[i].image[0] %> " alt="<%= productData[i].image[0] %> "></td>
+		<td style="border-bottom: solid 1px blue;">  <p><%= productData[i].category.name %></p> </td>
+		<td style="border-bottom: solid 1px blue;">  <p><%= productData[i].quantity %></p> </td>
+		<th style="border-bottom: solid 1px blue;"> <a href="/admin/updateProduct?id=<%=productData[i]._id %>"><button style="width: 100px;" type="button" class="btn btn-primary">Update</button></a></th>
+		<th style="border-bottom: solid 1px blue;"> <a href="/admin/deleteProduct?id=<%=productData[i]._id %>"><button style="width: 100px;" type="button" class="btn btn-danger">Delete</button></a></th>
+		<th style="border-bottom: solid 1px blue;"><a href="/admin/productSinglepage?id=<%=productData[i]._id %>"><button style="width: 100px;" type="button" class="btn btn-info"> View</button></a> </th>
+
+
+		</tr>
+	
+	  <%
+              }
+            } %>
+	</tbody>
+  </table>
+</body>
+	
+	
+
+

@@ -1,0 +1,235 @@
+<%- include('../admin/layout/header.ejs') %>
+<ul class="breadcrumb">
+  <li><a href="#">admin</a></li>
+  <li><a href="#">product Order</a></li>
+ 
+</ul>
+<style>
+  /* Style the list */
+ul.breadcrumb {
+padding: 10px 16px;
+list-style: none;
+background-color: #eee;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+display: inline;
+font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+padding: 8px;
+color: black;
+content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+color: #0275d8;
+text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+color: #01447e;
+text-decoration: underline;
+}
+</style>
+<style>
+#coupon{
+  color: var(--primary);
+  background: #FFFFFF;
+  border-color: var(--primary);
+}
+</style>
+
+
+<body>
+    <div class="container">
+        <div class="main-body">
+        
+              <!-- Breadcrumb -->
+        
+              <!-- /Breadcrumb -->
+        
+              <div class="row gutters-sm" style="margin-top: 50px;">
+                <div class="col-md-4 mb-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex flex-column align-items-center text-center">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                        <div class="mt-3">
+                          <h4><%=order.user.name%></h4>
+                          <p class="text-secondary mb-1">arnoza</p>
+                         
+                       
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mt-3">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mr-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><%=order.user.name%></h6>
+                        <span class="text-secondary">user NAME</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <h6 class="mb-0"><%=order.user.email%></h6>
+                        <span class="text-secondary">E-MAIL</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <h6 class="mb-0"><%=order.user.phone%>></h6>
+                        <span class="text-secondary">PHONE NO</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap" style="background-color: aqua;">
+                        <h6 class="mb-0"> <%=order.orderType%></h6>
+                        <span class="text-secondary">ORDER TYPE</span>
+                      </li>
+                    
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">FIRST NAME</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                         <%=order.address.firstName%>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">LAST NAME</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <%=order.address.lastName%>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">HOUSE</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <%=order.address.house%>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">POST</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <%=order.address.post%>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">CITY</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <%=order.address.city%>
+                        </div>
+                      </div>
+                      <hr>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">DISTRICT</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <%=order.address.district%>
+                        </div>
+                      </div>
+                      <hr>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">STATE</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <%=order.address.state%>
+                        </div>
+                      </div>
+                      <hr>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">PIN CODE</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <%=order.address.pin%>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="row gutters-sm">
+                    <div class="col-sm-6 mb-3">
+                      <div class="card h-100">
+                        <% for( let i = 0; i < order.products.length; i++ ) { %>
+                        <div class="card-body"style="border-bottom: 1px solid rgb(170, 170, 170);">
+                         
+
+                            <img width="300px"height="300px" src=" prodectImages/<%=order.products[i].image%>" alt="">
+                        
+                        
+                        </div>
+                        <% } %>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                      <div class="card h-100">
+                        <% for( let i = 0; i < order.products.length; i++ ) { %>
+                          <div class="card-body" style="border-bottom: 1px solid rgb(170, 170, 170);">
+                            <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
+                            <small>PRODUCT NAME</small>
+                            <div class="alert alert-primary" role="alert">
+                              <%=order.products[i].name%>
+                            </div>
+                         
+                            <small>PRODUCT CATEGORY</small>
+                            <div class="alert alert-primary" role="alert">
+                              <%=order.products[i].category%>
+                            </div>
+                            <small>PRODUCT PRICE</small>
+                            <div class="alert alert-primary" role="alert">
+                              <%=order.products[i].price%>
+                            </div>
+                            <small>PRODUCT QUANTITY</small>
+                            <div class="alert alert-primary" role="alert">
+                              <%=order.products[i].quantity%>
+                            </div>
+                            <small>PRODUCT ORDERD DATE</small>
+                            <div class="alert alert-primary" role="alert">
+                              <%=order.date%>
+                            </div>
+                          </div>
+                        <% } %>
+                    
+                      </div>
+                    </div>
+                  </div>
+    
+    
+    
+                </div>
+              </div>
+    
+            </div>
+        </div>
+</body>
+</html>

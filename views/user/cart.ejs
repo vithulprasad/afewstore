@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="zxx">
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,1,0" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>IsFewStore</title>
+  <link rel="icon" href="img/favicon.png">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- animate CSS -->
+  <link rel="stylesheet" href="css/animate.css">
+  <!-- owl carousel CSS -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <!-- nice select CSS -->
+  <link rel="stylesheet" href="css/nice-select.css">
+  <!-- font awesome CSS -->
+  <link rel="stylesheet" href="css/all.css">
+  <!-- flaticon CSS -->
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/themify-icons.css">
+  <!-- font awesome CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <!-- swiper CSS -->
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/price_rangs.css">
+  <link rel="stylesheet" href="/custom.css">
+  <!-- style CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');body{background-color: #eeeeee;font-family: 'Open Sans',serif;font-size: 14px}.container-fluid{margin-top:70px}.card-body{-ms-flex: 1 1 auto;flex: 1 1 auto;padding: 1.40rem}.img-sm{width: 80px;height: 80px}.itemside .info{padding-left: 15px;padding-right: 7px}.table-shopping-cart .price-wrap{line-height: 1.2}.table-shopping-cart .price{font-weight: bold;margin-right: 5px;display: block}.text-muted{color: #969696 !important}a{text-decoration: none !important}.card{position: relative;display: -ms-flexbox;display: flex;-ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;background-color: #fff;background-clip: border-box;border: 1px solid rgba(0,0,0,.125);border-radius: 0px}.itemside{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;width: 100%}.dlist-align{display: -webkit-box;display: -ms-flexbox;display: flex}[class*="dlist-"]{margin-bottom: 5px}.coupon{border-radius: 1px}.price{font-weight: 600;color: #212529}.btn.btn-out{outline: 1px solid #fff;outline-offset: -5px}.btn-main{border-radius: 2px;text-transform: capitalize;font-size: 15px;padding: 10px 19px;cursor: pointer;color: #fff;width: 100%}.btn-light{color: #ffffff;background-color: #F44336;border-color: #f8f9fa;font-size: 12px}.btn-light:hover{color: #ffffff;background-color: #F44336;border-color: #F44336}.btn-apply{font-size: 11px}
+  </style>
+  <!--::header part start::-->
+  <header class="main_menu home_menu">
+    <div class="container-fluid" style="border-bottom: solid 2px; background-color: #ff3368;margin-top: 0px;">
+        <div class="row align-items-center">
+            <div class="col-lg-12"style="margin:0;">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="menu_icon"><i class="fas fa-bars"></i></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="home">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
+                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Shop
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                    <a class="dropdown-item" href="category"> shop category</a>
+                                    
+                                    <a class="dropdown-item" href="cartPage">shopping cart</a>
+                                  
+                                    
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3"
+                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Account
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
+                                   
+                                 
+                                    <a class="dropdown-item" href="confirmation">confirmation</a>
+                                    <a class="dropdown-item" href=" /profile?id=<%=userData._id %>">Profile</a> 
+                                    
+                                </div>
+                            </li>
+                        
+                            
+                           
+                          
+                     
+                          
+                        </ul>
+                    </div>
+                    <div class="hearer_icon d-flex">
+                        <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
+                        <a type="button"data-toggle="modal" data-target="#exampleModal"><span style="margin-left: 30px;" class="material-symbols-outlined">
+                            account_balance_wallet
+                            </span></a>
+                        <a href="/wishlist"><i class="ti-heart"></i></a>
+                        <div class="dropdown cart">
+                            <a href="cartPage"style="margin-left:15px;">
+                                <span class="material-symbols-outlined">
+                                    shopping_cart
+                                    </span>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="color:white">
+                                 <%=count %>
+                                
+                                </span>
+                            </a>
+                            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="single_product">
+
+                                </div>
+                            </div> -->
+                            
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+                
+  
+
+</header>
+  <% if(count != 0){ %>
+    <div style="margin: 200px;">
+      <div class="row" id="cart-product-row">
+          <aside id="cart-left-side" class="col-lg-9">
+              <div class="card">
+                  <div class="table-responsive">
+                      <table class="table table-borderless table-shopping-cart">
+                          <thead class="text-muted">
+                              <tr class="small text-uppercase">
+                                  <th style="" scope="col">Product</th>
+                                  <th scope="col">name</th>
+                                  <th style="margin-left: 10px;" scope="col">price</th>
+                                  <th style="padding-left: 20px;" scope="col" width="120">total price</th>
+                                  <th scope="col" width="120" style="padding-left: 40px;">Quantity</th>
+                                  <th scope="col" class="text-right d-none d-md-block" width="200"></th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <% let totalPrice = 0 %>
+                            <% for(i=0;i<products.length;i++) { %>
+                            
+                              <tr>
+                                  <td>
+                                      <figure class="itemside align-items-center">
+                                          <div class="aside">  <img width="100px" height="100px" src="/prodectImages/<%=products[i].image[0]%>"></div>
+                                        
+                                      </figure>
+                                  </td>
+                                  <td>  <figcaption style="padding-top: 30px;" class="info"> <a style="font-size: 15px;font-weight: bold;"><%=products[i].name%></a>
+                                    <p class="text-muted small"><br></p>
+                                </figcaption></td>
+                            
+                                <td>
+                                    <h4 style="margin-top:30px;color: #212529;font-weight:bold ;" ><span  class="material-symbols-outlined">
+                                        currency_rupee
+                                        </span><%=products[i].price%></h4> 
+                                </td>
+                                <td>
+                                    <div class="price-wrap" style="display: flex;justify-content:space-around;"> <span style="margin-top: 30px;" class="material-symbols-outlined">
+                                        currency_rupee
+                                        </span> <h3 id="<%=products[i]._id %>_hh" style="margin-top: 30px;color: #969696;font-weight: bold;"><%=products[i].price%></h3> </div>
+                                </td>
+                                  
+                                  <td class="align-middle" style="padding-bottom: 32px;padding-left: 20px;">
+                                    <div class="input-group quantity mx-auto" style="width: 100px;">
+
+                                        <div class="input-group-btn">
+                                            <button id="decrement-btn-<%=products[i]._id%>" onclick="decrement('<%=products[i]._id%>','<%=cartProducts[i].quantity %>')" class="btn btn-sm btn-dark btn-minus">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                       
+                                        <input readonly style="width: 40px;border: none;text-align: center;" type="text" id="<%=products[i]._id %>" value="<%=cartProducts[i].quantity%>" min="1">                                       
+                                       
+                                        
+                                        <div class="input-group-btn">
+                                            <button id="increment-btn-<%=products[i]._id%>" onclick="increment('<%=products[i]._id%>','<%=cartProducts[i].quantity %>')" class="btn btn-sm btn-dark btn-plse">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                           
+                               
+                                  <td style="display: flex;justify-content: center; padding-top: 33px; width: 150px;margin-left: 20px;">   <a href="/removeCart?id=<%= products[i]._id %>" class="btn btn-out btn-danger btn-square btn-main "style="width:60px" data-abc="true"><span class="material-symbols-outlined">
+                                    delete
+                                    </span></a></td>
+                                 
+                              </tr>
+                       
+                             
+                          </tbody>
+                          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                          
+                          <script>
+                          const decrement = function(id,qun) {
+                                      
+                                       let qnty = parseInt(qun)
+                                        $.ajax({
+                                            url: '/decrement',
+                                            method: 'PATCH',
+                                            dataType: 'json',
+                                            data: {
+                                                id: id
+                                            }
+                                        }).done(data => {
+                                            console.log(data.checking,'--------------------------------');
+                                            const values= data.value
+                                            $(`#${id}`).val(values);
+                                            $(`#${id}_hh`).html(data.totalPrice);
+                                            sum(id);
+                                            $(`#increment-btn-${id}`).prop('disabled', false);
+                                            console.log(values);
+                                            if (values==1) {
+                                                console.log('working--------------');
+                                                $(`#decrement-btn-${id}`).prop('disabled', true);
+                                            } else {
+                                                console.log('else is working------------');
+                                        
+                                                $(`#decrement-btn-${id}`).attr('onclick', `decrement('${id}','${values}')`);
+                                            }
+                                        });
+                                    };
+                        
+                        const increment = function(id) {
+                        
+                            $.ajax({
+                                url: '/increment',
+                                method: 'PATCH',
+                                dataType: 'json',
+                                data: {
+                                    id: id
+                                }
+                            }).done(data => {
+                                console.log(data.checking,'--------------------------------');
+                               const values= data.value
+                               $(`#${id}`).val(values);
+                               $(`#${id}_hh`).html(data.totalPrice);
+                               sum(id);
+                               console.log(values);
+                               $(`#decrement-btn-${id}`).prop('disabled', false);
+
+                               const check1 = data.a
+                               const check2=data.b
+                               console.log(check1,'------------------increment------a');
+                               console.log(check2,'--------------------increment-----b');
+                               if(check1==check2){
+                                $(`#increment-btn-${id}`).prop('disabled', true);
+                               }else {
+                                console.log('--------------work');
+                                $(`#increment-btn-${id}`).attr('onclick', `increment('${id}','${values}')`);
+                               }
+                            });
+                        }
+                        
+                        const sum = function(id) {
+                            $.ajax({
+                                url: '/sum',
+                                method: 'PATCH',
+                                dataType: 'json',
+                                data: {
+                                  id:id
+                                }
+                            }).done(data => {
+                               const values= data.datas
+                               $("#pricessssid").val(values);
+                               $("#price123").html(values);
+                            });
+                        };
+
+                    </script>
+                        
+                          <% } %>
+                         
+                      </table>
+                  </div>
+              </div>
+          </aside>
+          <aside id="cart-right-side"  class="col-lg-3">
+              <div class="card mb-3">
+                  <div class="card-body">
+                        <div class="form-group">
+                          <label>Have coupon?</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control coupon" name="valueCoupon" id="couponCode" placeholder="Coupon code">
+                            <span class="input-group-append">
+                              <button  id="applay" class="btn btn-primary btn-apply coupon" onclick="couponApply(document.getElementById('couponCode').value)">Apply</button>
+                              <a href="cartPage" id="cancel" hidden><button type="button" class="btn btn-danger">CANCEL</button></a>
+                            </span>
+                            <h2 style="color:green" id="hallo-h1"></h2>
+                          </div>
+                        </div>
+                  </div>
+              </div>
+              <div class="card">
+                  <div class="card-body">
+                      <dl class="dlist-align">
+                          <dt>Total price:</dt>
+                          <input width="20px" type="text" id="pricessssid"  value="<%=a%>"name="total-price" readonly>
+                      </dl>
+                      <dl class="dlist-align">
+                          <dt>Discount : $ -</dt>
+                          <h6 style="color: green;margin-left: 10px;" id="Discount"></>
+                      </dl>
+                 
+
+                      <dl class="dlist-align">
+                          <dt>Total:</dt>
+                          <dd  class="text-right text-dark b ml-3"><span  class="material-symbols-outlined">
+                            currency_rupee
+                            </span><strong style="font-size: 18px;margin-top: -5px;" id="price123"><%=a%></strong></dd>
+                      </dl>
+                      <hr> <a href="category" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Make Purchase </a> <a href="checkout" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
+                  </div>
+              </div>
+          </aside>
+      </div>
+  </div>
+     <% }else { %>
+        <div class="container-fluid  ">
+            <div class="row">
+               <div class="col-md-12">
+                       <div class="card">
+                          <div class="card-body cart">
+                           <div class="col-sm-12 empty-cart-cls text-center">
+                               <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3">
+                               <h3><strong>Your Cart is Empty</strong></h3>
+                               <h4>Add something to make me happy :)</h4>
+                               <a href="category" class="btn btn-dark cart-btn-transform m-3" data-abc="true">continue shopping</a>
+                           </div>
+                      </div>
+                  </div>
+           </div>       
+       </div>           
+</div>
+          
+
+        <% } %>
+      <script>
+              const couponApply = function (id) {
+                $.ajax({
+                                url: '/couponApply',
+                                method: 'post',
+                                dataType: 'json',
+                                data: {
+                                id:id
+                                }
+                            }).done(data => {
+                        
+                               const values1= data.returnCoupon1
+                               const values2 = data.returnCoupon2
+                               const values3 = data.returnCoupon3
+                               const values4=data.returnCoupon4
+                               const values5=data.returnCoupon5
+                               
+                               console.log(values1+'one', values2+'two', values3,'three');
+                               $("#Discount").html(data.discount);
+                               $("#price123").html(data.price);
+                               if (values1) {
+                                console.log('one');
+                                let find = document.getElementById('hallo-h1');
+                                                  
+                                                    find.innerHTML = null;
+                                                  
+                                                    find.innerHTML = values1
+                               } else if (values2) {
+                                console.log('two');
+                                let find = document.getElementById('hallo-h1');
+                                                    find.innerHTML = null; 
+                                                    
+                                                    find.innerHTML = values2
+                               }else if(values3){
+                                console.log('three');
+                                let find = document.getElementById('hallo-h1');
+                                                    find.innerHTML = null;
+                                                    find.innerHTML = values3
+                               }else if(values4){
+                                console.log('four');
+                                let find = document.getElementById('hallo-h1');
+                                                     find.innerHTML = null; 
+                                                  find.innerHTML = values4
+                               }else{
+                                let find = document.getElementById('hallo-h1');
+                                                     find.innerHTML = null; 
+                                                  find.innerHTML = values5
+                               }
+                                                    
+                                                    
+                               if(values4){
+                                console.log('it is working------------------------------------ this is not the case   ');
+                                }else{
+                                    console.log('else is workig in the case ---------------------------------- case is true');
+                                    const apply = document.getElementById("applay")
+                                   const cancel = document.getElementById("cancel")
+                                   cancel.hidden = false;
+                                   apply.hidden = true;
+                                }          
+
+                                                  
+                            });
+              }
+
+      </script>
+        
+        
+  <script src="js/jquery-1.12.1.min.js"></script>
+  <!-- popper js -->
+  <script src="js/popper.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- easing js -->
+  <script src="js/jquery.magnific-popup.js"></script>
+  <!-- swiper js -->
+  <script src="js/swiper.min.js"></script>
+  <!-- swiper js -->
+  <script src="js/masonry.pkgd.js"></script>
+  <!-- particles js -->
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.nice-select.min.js"></script>
+  <!-- slick js -->
+  <script src="js/slick.min.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/waypoints.min.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="js/jquery.form.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/mail-script.js"></script>
+  <script src="js/stellar.js"></script>
+  <script src="js/price_rangs.js"></script>
+  
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+</body>
+
+</html>
+
+

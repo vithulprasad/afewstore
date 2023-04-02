@@ -1,0 +1,17 @@
+#notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  
+  
+  
+  
+  

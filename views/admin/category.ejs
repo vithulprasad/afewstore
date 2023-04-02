@@ -1,0 +1,90 @@
+<%- include('../admin/layout/header.ejs') %>
+
+
+<style>
+	#category{
+		color: var(--primary);
+		background: #FFFFFF;
+		border-color: var(--primary);
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+<script>
+	$(document).ready(function() {
+  $('#myTable').DataTable({
+    "order": []
+  });
+});
+</script>
+        <!-- Sidebar End -->
+
+		<div class="align-items-center ms-5">
+		<main class="ms-5">
+			<div class="head-title">
+				<div class="left">
+					<h1>CATEGORY</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">CATEGORY S</a>
+						</li>
+					</ul>
+				</div>
+				<a href="addCategory"  style="display: flex;justify-content: center;" >
+			
+					<button type="button" class="btn btn-primary">ADD NEW CATEGORY</button>
+				</a>
+			</div>
+
+
+            <div class="table-data">
+				<div class="order">
+
+				
+       
+                    <table  id="myTable"  style="  width:1500px;height: 300px;" >
+						<thead >
+							<tr >
+								<th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;">Category</th>
+							
+							<a href=""> <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;">image</th></a>
+                            <a href=""> <th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;">Delete</th></a>
+                        </tr>
+						</thead>
+						<tbody>
+              <% if(categoryData.length >0){
+                for(let i=0;i<categoryData.length;i++){
+                  %>
+                  <tr style="margin: 20px;">
+							
+					<th style="border-bottom: solid 1px black; width: 150px;height: 50px ;text-align: center;"> <h2><%= categoryData[i].name %></h2>  </td>
+								
+						<th style="border-bottom: solid 1px black;width: 150px;height: 50px ;text-align: center;"> <img width="100px"height="100px" src=" /prodectImages/<%=categoryData[i].images %> "  alt="">  </td>
+
+							<th style="border-bottom: solid 1px black;width: 150px;height: 50px ;text-align: center;"> <a href="/admin/updateCategory?id=<%=categoryData[i]._id %>"><button type="button" class="btn btn-primary">Update</button></a> </td>
+								
+							</tr>
+							<%
+                }
+              } %>
+						
+							
+						</tbody>
+					</table>
+
+				
+			
+		
+		</main>
+	</div>
+
+
+

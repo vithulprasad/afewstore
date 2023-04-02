@@ -1,0 +1,161 @@
+<%- include('../admin/layout/header.ejs') %>
+<ul class="breadcrumb">
+    <li><a href="#">admin</a></li>
+    <li><a href="#">user page</a></li>
+   
+  </ul>
+  <style>
+    /* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+  </style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+<script>
+	$(document).ready(function() {
+  $('#myTable').DataTable({
+    "order": []
+  });
+});
+</script>
+<style>
+	#user{
+		color: var(--primary);
+		background: #FFFFFF;
+		border-color: var(--primary);
+	}
+</style>
+	
+            
+    <h2 style="display:flex;justify-content: center;">users </h2>
+    
+                  
+             
+                    
+    
+    
+          
+                      
+                    
+            
+                            <table id="myTable" width="1500px">
+                                <thead >
+                                    <tr >
+                                        <th style="border-bottom: solid 2px rgb(4, 4, 5); width: 150px;height: 50px ;text-align: center;">Name</th>
+                                        
+                                        <th style="border-bottom: solid 2px rgb(8, 8, 9); width: 150px;height: 50px ;text-align: center;">phone </th>
+                                        <th style="border-bottom: solid 2px rgb(6, 6, 8); width: 150px;height: 50px ;text-align: center;">email</th>
+                                        <th style="border-bottom: solid 2px rgb(6, 6, 9); width: 150px;height: 50px ;text-align: center;">password</th>  
+                                    <!-- <a href=""><th  style="border: solid 2px rgb(13, 13, 14); width: 150px;height: 50px ;text-align: center;">Update</th></a> -->
+                                    <a href=""><th  style="border-bottom: solid 2px rgb(7, 6, 8); width: 150px;height: 50px ;text-align: center;">Delete</th></a>
+                                    <a href=""><th  style="border-bottom: solid 2px rgb(6, 6, 8); width: 150px;height: 50px ;text-align: center;">Banned</th></a>
+                                    <a href=""><th  style="border-bottom: solid 2px rgb(10, 9, 10); width: 150px;height: 50px ;text-align: center;">UnBanned</th></a>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                   
+                      <% if(productData.length >0){
+                        for(let i=0;i<productData.length;i++){
+                          %>
+                          <% if (productData[i].status==="unbanned" ) { %>
+                          <tr style="margin: 20px; background-color: rgb(189, 255, 194);">
+                           
+                                <td  style="border-bottom: solid 2px rgb(7, 7, 9); width: 150px;height: 50px ;text-align: center;">
+                                    <p style="color: rgb(0, 0, 0);"><%= productData[i].name %> </p>
+                                </td>
+                           
+                                        
+                                           
+                                        
+                                      
+                                   
+                                        <td style="border-bottom: solid 2px rgb(10, 10, 11); width: 150px;height: 50px ;text-align: center;"> <p style="color: rgb(0, 0, 0);"> <%= productData[i].phone %></p> </td>
+                                        <td  style="border-bottom: solid 2px rgb(10, 9, 11); width: 150px;height: 50px ;text-align: center;"> <p style="color: rgb(0, 0, 0);"> <%= productData[i].email %></p></td>
+                                        <td  style="border-bottom: solid 2px rgb(6, 6, 7); width: 150px;height: 50px ;text-align: center;"> <p style="color: rgb(0, 0, 0);"><%= productData[i].password%></p></td>
+                                        <!-- <td  style="border-bottom: solid 2px rgb(9, 9, 10); width: 150px;height: 50px ;text-align: center;"> <a href="/admin/updateProduct?id=<%=productData[i]._id %>"><button style="border: none;background-color: rgb(66, 81, 243);color: white;">Update</button></a> </td> -->
+                                        <td  style="border-bottom: solid 2px rgb(3, 3, 3); width: 150px;height: 50px ;text-align: center;"> <a href="/admin/deleteProduct?id=<%=productData[i]._id %>"><button type="button" class="btn btn-danger">Delete</button></a> </td>
+                                        <td  style="border-bottom: solid 2px rgb(14, 14, 15); width: 150px;height: 50px ;text-align: center;"> <a href="/admin/banned?id=<%=productData[i]._id %>"><button type="button" class="btn btn-warning">Banned</button></a> </td>
+                                        <td  style="border-bottom: solid 2px rgb(6, 5, 11); width: 150px;height: 50px ;text-align: center;"> <a href="/admin/unbanned?id=<%=productData[i]._id %>"><button type="button" class="btn btn-success">UNbanned</button></a> </td>
+                                    </tr>
+                                    <% } else { %>
+                                        <tr style="margin: 20px; background-color: rgb(249, 255, 193);">
+                           
+                                            <td  style="border-bottom: solid 2px rgb(7, 7, 9); width: 150px;height: 50px ;text-align: center;">
+                                                <p style="color: rgb(0, 0, 0);"><%= productData[i].name %> </p>
+                                            </td>
+                                       
+                                                    
+                                                       
+                                                    
+                                                  
+                                               
+                                                    <td style="border-bottom: solid 2px rgb(10, 10, 11); width: 150px;height: 50px ;text-align: center;"> <p style="color: rgb(0, 0, 0);"> <%= productData[i].phone %></p> </td>
+                                                    <td  style="border-bottom: solid 2px rgb(10, 9, 11); width: 150px;height: 50px ;text-align: center;"> <p style="color: rgb(0, 0, 0);">  <%= productData[i].email %></p></td>
+                                                    <td  style="border-bottom: solid 2px rgb(6, 6, 7); width: 150px;height: 50px ;text-align: center;"><p style="color: rgb(0, 0, 0);"> <%= productData[i].password%></p></td>
+                                                    <!-- <td  style="border-bottom: solid 2px rgb(9, 9, 10); width: 150px;height: 50px ;text-align: center;"> <a href="/admin/updateProduct?id=<%=productData[i]._id %>"><button style="border: none;background-color: rgb(66, 81, 243);color: white;">Update</button></a> </td> -->
+                                                    <td  style="border-bottom: solid 2px rgb(3, 3, 3); width: 150px;height: 50px ;text-align: center;"> <a href="/admin/deleteProduct?id=<%=productData[i]._id %>"><button type="button" class="btn btn-danger">Delete</button></a> </td>
+                                                    <td  style="border-bottom: solid 2px rgb(14, 14, 15); width: 150px;height: 50px ;text-align: center;"> <a href="/admin/banned?id=<%=productData[i]._id %>"><button type="button" class="btn btn-warning">Banned</button></a> </td>
+                                                    <td  style="border-bottom: solid 2px rgb(6, 5, 11); width: 150px;height: 50px ;text-align: center;"> <a href="/admin/unbanned?id=<%=productData[i]._id %>"><button type="button" class="btn btn-success">UNbanned</button></a> </td>
+                                                </tr>
+                                    <% } %>
+                                    
+                                    <%
+                        }
+                      } %>
+                      
+                                
+                                    
+                                </tbody>
+                            </table>
+              
+    
+    
+                    
+                
+            
+            </main>
+        </div>
+    
+    
+
+    <!-- JavaScript Libraries -->
+   
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
