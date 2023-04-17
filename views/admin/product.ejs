@@ -91,7 +91,7 @@ ul.breadcrumb li a:hover {
 	  <tr>
 		<td style="border-bottom: solid 1px blue;"><p> <%=i+1%></p></td>
 		<td style="border-bottom: solid 1px blue;"> <p><%= productData[i].name %> </p></td>
-		<td style="border-bottom: solid 1px blue;">  <img width="100px"height="70px" src=" prodectImages/<%=productData[i].image[0] %> " alt="<%= productData[i].image[0] %> "></td>
+		<td style="border-bottom: solid 1px blue;">  <img width="100px"height="70px" src=" /prodectImages/<%=productData[i].image[0] %> " alt="<%= productData[i].image[0] %> "></td>
 		<td style="border-bottom: solid 1px blue;">  <p><%= productData[i].category.name %></p> </td>
 		<td style="border-bottom: solid 1px blue;">  <p><%= productData[i].quantity %></p> </td>
 		<th style="border-bottom: solid 1px blue;"> <a href="/admin/updateProduct?id=<%=productData[i]._id %>"><button style="width: 100px;" type="button" class="btn btn-primary">Update</button></a></th>

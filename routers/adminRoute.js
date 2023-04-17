@@ -1,5 +1,7 @@
 const express = require('express');
 const admin_route = express();
+const multer = require("multer");
+const path = require("path");
 const logger = require('morgan');
 const session = require("express-session");
 const config = require("../config/config");
@@ -25,24 +27,9 @@ admin_route.set('view engine','ejs');
 admin_route.set('views','./views/admin');
 
 
-const multer = require("multer");
-const path = require("path");
-
-admin_route.use(express.static("public"));
 
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, path.join(__dirname,'../public/prodectImages'));
-    },
-    filename: function (req, file, cb) {
-        const name = Date.now() + '-' + file.originalname;
-        cb(null, name)
-    }
-});
-const upload = multer({
-    storage:storage
-})
+
 
 
 admin_route.get('/',auth.isLogout,adminController.loadLogin);
@@ -53,12 +40,12 @@ admin_route.get('/homeIndex',adminController.homeIndex);
 
 admin_route.get('/product',auth.isLogin,adminController.productLoad)
 admin_route.get('/productAdd',auth.isLogin,adminController.product)
-admin_route.post('/addProduct',auth.isLogin,upload.array('image',10),adminController.addProduct)
+admin_route.post('/addProduct',auth.isLogin,auth.upload.array('image',10),adminController.addProduct)
 admin_route.get('/addProductLoad',auth.isLogin,adminController.addProductLoad)
 admin_route.get('/deleteProduct',auth.isLogin,adminController.deleteProduct)
 admin_route.get('/updateProduct',auth.isLogin,adminController.updateProduct);
-admin_route.post('/updateProduct',auth.isLogin,upload.array('image',10),adminController.productUpdate);
-admin_route.post('/updateProductImage',auth.isLogin,upload.array('image',10),adminController.updateProductImage)
+admin_route.post('/updateProduct',auth.isLogin,auth.upload.array('image',10),adminController.productUpdate);
+admin_route.post('/updateProductImage',auth.isLogin,auth.upload.array('image',10),adminController.updateProductImage)
 admin_route.get('/deleteProductImage',auth.isLogin,adminController.deleteProductImage)
 admin_route.get('/list',auth.isLogin,adminController.list);
 admin_route.get('/unlist',auth.isLogin,adminController.unlist);
@@ -68,9 +55,9 @@ admin_route.get('/productSinglepage',auth.isLogin,adminController.productSinglep
 
 admin_route.get('/category',auth.isLogin,adminController.category);
 admin_route.get('/addCategory',auth.isLogin,adminController.addCategory);
-admin_route.post('/categoryAdd',auth.isLogin,upload.array('image',10),adminController.categoryAdd)
+admin_route.post('/categoryAdd',auth.isLogin,auth.upload.array('image',10),adminController.categoryAdd)
 admin_route.get('/updateCategory',auth.isLogin,adminController.updateCategory);
-admin_route.post('/categoryUpdate',auth.isLogin,upload.array('image',10),adminController.categoryUpdate);
+admin_route.post('/categoryUpdate',auth.isLogin,auth.upload.array('image',10),adminController.categoryUpdate);
 
 
 
@@ -82,7 +69,7 @@ admin_route.get('/unbanned',auth.isLogin,adminController.unbanned);
 
 admin_route.get('/banner',auth.isLogin,adminController.banner);
 admin_route.get('/bannerAdd',auth.isLogin,adminController.bannerAdd);
-admin_route.post('/bannerSubmit',auth.isLogin,upload.array('image',10),adminController.bannerSubmit);
+admin_route.post('/bannerSubmit',auth.isLogin,auth.upload.array('image',10),adminController.bannerSubmit);
 admin_route.get('/deleteBanner',auth.isLogin,adminController.deleteBanner);
 
 
