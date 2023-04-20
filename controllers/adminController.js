@@ -100,7 +100,6 @@ const adminLogout = async (req, res) => {
 const product = async (req, res) => {
   const product = await Product.find({});
   const category = await categoryDb.find({});
-  console.log("hai thhis is the data of category" + category);
   try {
     const message = "true";
     res.render("productAdd", { product, category, message });
@@ -111,9 +110,6 @@ const product = async (req, res) => {
 
 //product loading
 const productLoad = async (req, res) => {
-  console.log(
-    "the product load is working-------------------------------------------------------------------------------------"
-  );
   const productData = await Product.find({}).populate("category");
   const image = await Product.find({ image: { $in: [0] } });
   try {
@@ -126,9 +122,6 @@ const productLoad = async (req, res) => {
 // add new product load
 const addProductLoad = async (req, res) => {
   try {
-    console.log(
-      "the addd product load is working-------------------------------------------------------------------------------------"
-    );
     const category = await categoryDb.find({});
     const message = "true";
     res.render("newproduct", { productData, category, message });
@@ -156,23 +149,20 @@ console.log(files, imageUpload);
       }).catch(err=>{
         console.log(err);
       })
-      let url = response.secure_url
-      fs.unlink(__dirname+"/../public/prodectImages/"+files[i],(err,res)=>{
-
-      })
+     
     }
-
+console.log(req.body);
     const product = new Product({
       name: req.body.name,
-      discription: req.body.discription,
+      discription: req.body.description,
       price: req.body.price,
       offerPrice: req.body.offerPrice,
       quantity: req.body.quantity,
       category: req.body.category,
       image: imageUpload,
     });
-
-    if (req.body.offerPrice <= req.body.price) {
+    if (req.body.offerPrice <= req.body.price) 
+    {
       const productData = await product.save();
       res.redirect("/admin/product");
     } else {
@@ -191,7 +181,6 @@ const deleteProduct = async (req, res) => {
   try {
     const product_id = req.query.id;
     const deleteData = await Product.findByIdAndDelete({ _id: product_id });
-    console.log("Whats happenibg");
     res.redirect("/admin/product");
   } catch (error) {
     console.log("delete product error", error.message);
@@ -217,7 +206,6 @@ const productUpdate = async (req, res) => {
     const offerprice = req.body.offerPrice;
 
     if (offerprice <= price) {
-      console.log("price is larger");
       const product_id = req.body.id;
       let position = [];
       if (req.body.edit) {
@@ -334,7 +322,6 @@ const addCategory = async (req, res) => {
 const categoryAdd = async (req, res) => {
   try {
     const images = req.files;
-    console.log("---------------------", images[0].filename);
 
     const category = new categoryDb({
       name: req.body.category,
@@ -345,9 +332,7 @@ const categoryAdd = async (req, res) => {
     if (Check) {
       const message = "category existing";
       res.render("addCategory", { message });
-      console.log("hai category is not saved");
     } else {
-      console.log("hai category saved");
       const categoryHere = await category.save();
 
       res.redirect("/admin/category");
@@ -596,7 +581,6 @@ const couponDelete = async (req, res) => {
 
 const order = async (req, res) => {
   try {
-    console.log("----------------it is coming to the -----------order");
     const order = await Orders.find().populate("user");
     console.log(order[0].products[0].name);
     res.render("order", { order });
@@ -606,7 +590,6 @@ const order = async (req, res) => {
 };
 const orderd = async (req, res) => {
   try {
-    console.log("---------------------orderd--------------------");
     const id = req.query.id;
     const find = await Orders.find({ _id: id });
     if (find.status == "complete" || find.status == "OrderCanceled") {
@@ -621,7 +604,6 @@ const orderd = async (req, res) => {
 };
 const OrderShipped = async (req, res) => {
   try {
-    console.log("---------------------orderd--------------------");
     const id = req.query.id;
     const find = await Orders.find({ _id: id });
     if (find.status == "complete" || find.status == "OrderCanceled") {
@@ -639,7 +621,6 @@ const OrderShipped = async (req, res) => {
 };
 const Deliverd = async (req, res) => {
   try {
-    console.log("---------------------orderd--------------------");
     const id = req.query.id;
     const find = await Orders.find({ _id: id });
     if (find.status == "complete" || find.status == "OrderCanceled") {
@@ -657,7 +638,6 @@ const Deliverd = async (req, res) => {
 };
 const OrderCanceled = async (req, res) => {
   try {
-    console.log("---------------------orderd--------------------");
     const id = req.query.id;
     if (find.status == "complete") {
       res.redirect("/admin/order");
@@ -674,8 +654,7 @@ const OrderCanceled = async (req, res) => {
 };
 const compleat = async (req, res) => {
   try {
-    console.log("---------------------orderd--------------------");
-    const id = req.query.id;
+        const id = req.query.id;
     await Orders.findOneAndUpdate(
       { _id: id },
       { $set: { status: "compleat" } }
@@ -688,7 +667,6 @@ const compleat = async (req, res) => {
 
 const productOrder = async (req, res) => {
   try {
-    console.log("single product ------------------");
     const id = req.query.id;
     const order = await Orders.findOne({ _id: id }).populate("user");
     res.render("productOrder", { order });
@@ -702,10 +680,6 @@ const exelSheet = async (req, res) => {
   try {
     const workbook = new excelJs.Workbook();
     const Worksheet = workbook.addWorksheet("orders");
-    console.log(req.body);
-    console.log(req.body.end);
-    console.log(req.body.start);
-
     Worksheet.columns = [
       { header: "S no.", key: "s_no", width: 5 },
       { header: "Date", key: "date", width: 15 },
@@ -718,7 +692,6 @@ const exelSheet = async (req, res) => {
     let counter = 1;
 
     if (req.body.end == "" || req.body.start == "") {
-      console.log("working");
       const userData = await Orders.find();
       userData.forEach((user) => {
         user.s_no = counter;
@@ -769,7 +742,6 @@ const exelSheet = async (req, res) => {
           res.status(200);
         });
       } else {
-        console.log("nodata found");
         res.redirect("/orders");
       }
     }

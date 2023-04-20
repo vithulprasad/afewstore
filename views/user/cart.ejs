@@ -193,7 +193,7 @@
                                     <div class="input-group quantity mx-auto" style="width: 100px;">
 
                                         <div class="input-group-btn">
-                                            <button id="decrement-btn-<%=products[i]._id%>" onclick="decrement('<%=products[i]._id%>','<%=cartProducts[i].quantity %>')" class="btn btn-sm btn-dark btn-minus">
+                                            <button id="decrement-btn-<%=products[i]._id%>" onclick="decrement('<%=products[i]._id%>','<%=cartProducts[i].quantity %>','<%=products[i]._id %>')" class="btn btn-sm btn-dark btn-minus">
                                                 <i class="fa fa-minus"></i>
                                             </button>
                                         </div>
@@ -202,7 +202,7 @@
                                        
                                         
                                         <div class="input-group-btn">
-                                            <button id="increment-btn-<%=products[i]._id%>" onclick="increment('<%=products[i]._id%>','<%=cartProducts[i].quantity %>')" class="btn btn-sm btn-dark btn-plse">
+                                            <button id="increment-btn-<%=products[i]._id%>" onclick="increment('<%=products[i]._id%>','<%=cartProducts[i].quantity %>','<%=products[i]._id %>')" class="btn btn-sm btn-dark btn-plse">
                                                 <i class="fa fa-plus"></i>
                                             </button>
                                         </div>
@@ -221,7 +221,7 @@
                           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                           
                           <script>
-                          const decrement = function(id,qun) {
+                          const decrement = function(id,qun,quantity) {
                                       
                                        let qnty = parseInt(qun)
                                         $.ajax({
@@ -229,7 +229,8 @@
                                             method: 'PATCH',
                                             dataType: 'json',
                                             data: {
-                                                id: id
+                                                id: id,
+                                                qun:qun
                                             }
                                         }).done(data => {
                                             console.log(data.checking,'--------------------------------');
@@ -250,14 +251,16 @@
                                         });
                                     };
                         
-                        const increment = function(id) {
+                        const increment = function(id,qun,quantity) {
                         
                             $.ajax({
                                 url: '/increment',
                                 method: 'PATCH',
                                 dataType: 'json',
                                 data: {
-                                    id: id
+                                    id: id,
+                                    qun:qun,
+                                    quantity,quantity
                                 }
                             }).done(data => {
                                 console.log(data.checking,'--------------------------------');

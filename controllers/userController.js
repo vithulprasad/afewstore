@@ -231,7 +231,20 @@ const ottp = async (req, res, next) => {
         res.render("otpPage", { status: "false" });
       });
     } else {
-      res.render("home", { status: "true" });
+    const productData= await Product.find()
+    const  bannerData = await Banner.find()
+    const userData = await users.findOne({_id:req.session.user._id})
+    const categoryData = await Category.find()
+    const orders = await Order.find({user:req.session.user._id})
+    const count = 1;
+        res.render("index", {
+        productData,
+        bannerData,
+        userData,
+        categoryData,
+        count,
+        orders,
+      });
     }
   } catch (error) {
     console.log("send mail with defined transport object", error);
@@ -254,11 +267,24 @@ const ottpCompare = async (req, res, next) => {
         is_time: 10,
       });
       const productData = await Product.find({});
-      newUser.save().then((data) => {
+      newUser.save().then(async(data) => {
         req.session.useremail = req.session.email;
         req.session.userlogged = true;
         req.session.user = newUser;
-        res.render("index", { productData });
+        const productData= await Product.find()
+        const  bannerData = await Banner.find()
+        const userData = await users.findOne({_id:req.session.user._id})
+        const categoryData = await Category.find()
+        const orders = await Order.find({user:req.session.user._id})
+        const count = 1;
+            res.render("index", {
+            productData,
+            bannerData,
+            userData,
+            categoryData,
+            count,
+            orders,
+          });
       });
     } else {
       res.redirect("/otpPage");
@@ -1863,7 +1889,8 @@ console.log('skip=--------------------------------------------------------------
       responseData = { ...responseData, cartData };
     }
     if(currentPage==1){
-     
+      console.log(productData.length,'-productData-');
+    
       res.json({
         responseData,
         currentPage,
@@ -1872,8 +1899,10 @@ console.log('skip=--------------------------------------------------------------
         categoryData,
         count,
       });
+    
     }else{
-      console.log('getting here--------------------------------');
+      console.log(productData.length,'-productData-');
+
       res.json({
         responseData,
         currentPage,
@@ -2094,7 +2123,6 @@ const increment = async (req, res) => {
       const productId = req.body.id;
       const productOne = await Product.findOne({ _id: productId });
       const find = await Cart.findOne({ user: user });
-
       const data = find.products.find((product) => {
         return product.productId == productId;
       });
@@ -2115,13 +2143,18 @@ const increment = async (req, res) => {
         );
         for (let i = 0; i < find.products.length; i++) {
           if (find.products[i].productId == productId) {
-            let totalPrice = find.products[i].quantity * find.products[i].price;
+            let totalPrice =1 * find.products[i].price;
             const value = find.products[i].quantity;
             await Cart.findOneAndUpdate(
               { user: user, "products.productId": productId },
               { $set: { "products.$.totalPrice": totalPrice } }
             ).then((values) => {
               const totalPrice = values.products[i].totalPrice;
+              console.log(totalPrice,'----this is total price----');
+              console.log( req.body.quantity);
+              console.log();
+              console.log();
+
               res.json({ value, a, b, totalPrice, checking });
             });
           }

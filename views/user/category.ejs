@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="zxx">
 
 <head>
@@ -312,12 +312,17 @@ function renderPagination(data) {
         `;
     }
     if (data.currentPage !== data.totalPages) {
-        console.log(' if (data.currentPage !== data.totalPages)------------------');
+        if(data.productData.length==6){
+            console.log(' if (data.currentPage !== data.totalPages)------------------');
         paginationHtml += `
             <li class="page-item">
                 <a class="page-link" onclick="goToPage('${data.currentPage + 1}','${data.category._id}')">Next</a>
             </li>
         `;
+        }else{
+      
+        }
+       
     }
 
     paginationHtml += `
@@ -486,12 +491,12 @@ function renderPagination(data) {
                             </div>
                         </div>
                     </div>
-                    <div id="paginationContainer"></div>
+                    
 
                     <div id="innerhtml"class="row align-items-center latest_product_inner">
                     
                     </div>
-   
+                    <div id="paginationContainer"></div>
                     <div id="disablediv" class="row align-items-center latest_product_inner">
                         <% for (let i = 0; i < productData.length; i++) { %>
                           <div aria-disabled="true" class="col-lg-4 col-sm-6">
@@ -779,4 +784,4 @@ function renderPagination(data) {
     <script src="js/custom.js"></script>
 </body>
 
-</html>
+</html> -->
