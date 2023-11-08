@@ -1,14 +1,7 @@
 
 const express = require("express");
 const user_route =  express();
-const logger = require('morgan');
-const users = require("../models/userModel");
-const Jimp = require('jimp');
-const sharp = require('sharp');
 const session = require("express-session");
-const config = require("../config/config")
-const multer = require("multer");
-const path = require("path");
 const auth = require("../middleware/auth");
 
 user_route.use(express.static("public"));

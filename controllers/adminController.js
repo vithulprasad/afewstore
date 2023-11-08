@@ -5,8 +5,6 @@ const categoryDb = require("../models/category");
 const Banner = require("../models/banner");
 const Coupon = require("../models/coupon");
 const Orders = require("../models/ordersmodel");
-const nodemailer = require("nodemailer");
-const session = require("express-session");
 const excelJs = require("exceljs");
 const cloudinary = require('cloudinary').v2;
 require("dotenv").config()

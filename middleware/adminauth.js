@@ -1,5 +1,5 @@
 const express = require('express');
-const admin_route = express();
+
 const multer = require("multer");
 const path = require("path");
 

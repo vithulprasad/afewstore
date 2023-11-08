@@ -10,7 +10,7 @@ const Coupon = require("../models/coupon");
 const Cart = require("../models/cart");
 
 
-const cloudinary = require('cloudinary').v2;
+
 // ================================================SECURE PASSWORD============================================================
 const securePassword = async (password) => {
   try {

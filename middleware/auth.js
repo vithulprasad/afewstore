@@ -3,8 +3,8 @@ const user_route =  express();
 const multer = require("multer");
 const path = require("path");
 user_route.use(express.static("public"));
-const { session } = require("passport");
-const { user } = require("../controllers/adminController");
+
+
 const users = require("../models/userModel");
 
 const isLogin = async(req,res,next)=>{
@@ -27,7 +27,7 @@ const isLogin = async(req,res,next)=>{
     next();
 }
 
-console.log(session.user_id);
+
 
 const isLogout = async(req,res,next)=>{
     try {
