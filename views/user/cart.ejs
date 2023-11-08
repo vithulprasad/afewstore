@@ -186,7 +186,7 @@
                                 <td>
                                     <div class="price-wrap" style="display: flex;justify-content:space-around;"> <span style="margin-top: 30px;" class="material-symbols-outlined">
                                         currency_rupee
-                                        </span> <h3 id="<%=products[i]._id %>_hh" style="margin-top: 30px;color: #969696;font-weight: bold;"><%=products[i].price%></h3> </div>
+                                        </span> <h3 id="<%=products[i]._id %>_hh" style="margin-top: 30px;color: #969696;font-weight: bold;"><%=cartProducts[i].totalPrice%></h3> </div>
                                 </td>
                                   
                                   <td class="align-middle" style="padding-bottom: 32px;padding-left: 20px;">
@@ -233,7 +233,7 @@
                                                 qun:qun
                                             }
                                         }).done(data => {
-                                            console.log(data.checking,'--------------------------------');
+                                            console.log(data.totalPrice,'--------------------------------');
                                             const values= data.value
                                             $(`#${id}`).val(values);
                                             $(`#${id}_hh`).html(data.totalPrice);
@@ -341,7 +341,7 @@
                             currency_rupee
                             </span><strong style="font-size: 18px;margin-top: -5px;" id="price123"><%=a%></strong></dd>
                       </dl>
-                      <hr> <a href="category" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Make Purchase </a> <a href="checkout" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
+                      <hr> <a href="category" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Product List </a> <a href="checkout" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
                   </div>
               </div>
           </aside>

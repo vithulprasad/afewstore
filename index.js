@@ -5,20 +5,23 @@ const express = require("express");
 const app = express();
 const adminRoute = require('./routers/adminRoute');
 const userRoute = require('./routers/userRoute')
-const fileUpload= require('express-fileupload')
+
+
+mongoose.connect(process.env.DB,()=>{
+    console.log("mongodb is connected")
+})
+
+
+
 var path = require('path');
 require('dotenv').config();
 
 // Set up view engine
 app.set('view engine', 'ejs');
 
-mongoose.set('strictQuery', true);
-mongoose.connect(process.env.DB).then(()=>{
-    console.log("mongo connected");
-})
-// app.use(fileUpload({
-//     useTempFile:true
-// }))
+
+
+
 app.use(express.json())
 app.use(nocache())
 app.use(logger('dev'));

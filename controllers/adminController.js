@@ -7,7 +7,6 @@ const Coupon = require("../models/coupon");
 const Orders = require("../models/ordersmodel");
 const nodemailer = require("nodemailer");
 const session = require("express-session");
-const { name } = require("ejs");
 const excelJs = require("exceljs");
 const cloudinary = require('cloudinary').v2;
 require("dotenv").config()
@@ -222,6 +221,7 @@ const productUpdate = async (req, res) => {
         files.push(file.filename);
         position[i] = Number(position[i]);
       });
+      
       const cast = await Product.findOne({ _id: product_id });
       for (let i = 0; i < files.length; i++) {
         const cast = await Product.findOne({ _id: product_id });
