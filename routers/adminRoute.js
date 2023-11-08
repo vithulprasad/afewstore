@@ -1,10 +1,8 @@
 const express = require('express');
 const admin_route = express();
-const multer = require("multer");
-const path = require("path");
-const logger = require('morgan');
+
 const session = require("express-session");
-const config = require("../config/config");
+
 const bodyParser = require("body-parser");
 const auth = require("../middleware/adminauth")
 const adminController = require("../controllers/adminController")
